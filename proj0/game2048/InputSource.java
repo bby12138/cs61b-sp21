@@ -1,16 +1,14 @@
 package game2048;
 
-/** Describes a source of input commands.
+/** 描述输入命令的来源。
  *  @author P. N. Hilfinger
  */
 interface InputSource {
 
-    /** Returns one command string. */
+    /** 返回一个命令字符串。 */
     String getKey();
 
-    /** Returns a candidate Tile whose row and column is in the range
-     *  0 .. SIZE-1.  */
+    /** 返回一个候选 Tile，其行号和列号均在 0 到 SIZE-1 的范围内。 */
     Tile getNewTile(int size);
 
 }
-

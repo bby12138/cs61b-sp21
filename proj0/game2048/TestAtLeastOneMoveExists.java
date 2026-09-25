@@ -3,23 +3,21 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/** Tests the atLeastOneMoveExists() static method of Model.
+/** 测试 Model 的静态方法 atLeastOneMoveExists()。
  *
- * You shouldn't expect to pass these tests until you're passing all the tests
- * in TestEmptySpace.
+ * 在通过 TestEmptySpace 中的所有测试之前，不应期望这些测试能够通过。
  *
  * @author Omar Khan
  */
 public class TestAtLeastOneMoveExists {
 
-    /** The Board that we'll be testing on. */
+    /** 用于测试的 Board。 */
     static Board b;
 
     @Test
-    /** Tests a board with some empty space.
+    /** 测试存在一些空位的棋盘。
      *
-     *  Note that this isn't a comprehensive test for empty space. For that,
-     * see the TestEmptySpace class. */
+     * 注意，这并不是对空位的全面测试；相关测试请参见 TestEmptySpace 类。 */
     public void testEmptySpace() {
         int[][] rawVals = new int[][] {
                 {0, 0, 4, 0},
@@ -35,7 +33,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where a tilt in any direction would cause a change. */
+    /** 测试向任意方向倾斜都会发生变化的棋盘。 */
     public void testAnyDir() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 2},
@@ -51,7 +49,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where a tilt left or right would cause a change. */
+    /** 测试向左或向右倾斜会发生变化的棋盘。 */
     public void testLeftOrRight() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 4},
@@ -66,7 +64,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where a tilt up or down would cause a change. */
+    /** 测试向上或向下倾斜会发生变化的棋盘。 */
     public void testUpOrDown() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 4},
@@ -81,10 +79,9 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where some move exists (max tile is on the board).
+    /** 测试仍存在合法移动的棋盘（棋盘上已有最大数值方块）。
      *
-     * While having the max tile on the board does mean the game is over, it
-     * should not be handled in this method. */
+     * 虽然棋盘上出现最大数值方块意味着游戏结束，但不应在此方法中处理。 */
     public void testMoveExistsMaxPiece() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 4},
@@ -100,7 +97,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where no move exists. */
+    /** 测试不存在合法移动的棋盘。 */
     public void testNoMoveExists1() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 4},
@@ -115,7 +112,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where no move exists. */
+    /** 测试不存在合法移动的棋盘。 */
     public void testNoMoveExists2() {
         int[][] rawVals = new int[][] {
                 {2, 1024, 2, 4},
@@ -130,7 +127,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where no move exists. */
+    /** 测试不存在合法移动的棋盘。 */
     public void testNoMoveExists3() {
         int[][] rawVals = new int[][] {
                 {8, 4, 2, 32},
@@ -145,7 +142,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where no move exists. */
+    /** 测试不存在合法移动的棋盘。 */
     public void testNoMoveExists4() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 32},
@@ -160,7 +157,7 @@ public class TestAtLeastOneMoveExists {
     }
 
     @Test
-    /** Tests a board where no move exists. */
+    /** 测试不存在合法移动的棋盘。 */
     public void testNoMoveExists5() {
         int[][] rawVals = new int[][] {
                 {8, 16, 2, 32},

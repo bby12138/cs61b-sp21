@@ -11,15 +11,15 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.awt.event.KeyEvent;
 
 
-/** The GUI controller for a 2048 board and buttons.
+/** 2048 棋盘和按钮的 GUI 控制器。
  *  @author P. N. Hilfinger
  */
 class GUI extends TopLevel implements Observer {
 
-    /** Minimum size of board in pixels. */
+    /** 棋盘的最小尺寸（像素）。 */
     private static final int MIN_SIZE = 500;
 
-    /** A new window with given TITLE providing a view of MODEL. */
+    /** 创建标题为 TITLE 的新窗口，用于显示 MODEL。 */
     GUI(String title, Model model) {
         super(title, true);
         addMenuButton("Game->New", this::newGame);
@@ -42,28 +42,25 @@ class GUI extends TopLevel implements Observer {
         setScore(0, 0);
     }
 
-    /** Response to "Quit" button click. */
+    /** 响应“Quit”按钮的点击。 */
     public void quit(String dummy) {
         _pendingKeys.offer("Quit");
         _widget.requestFocusInWindow();
     }
 
-    /** Response to "New Game" button click. */
+    /** 响应“New Game”按钮的点击。 */
     public void newGame(String dummy) {
         _pendingKeys.offer("New Game");
         _widget.requestFocusInWindow();
     }
 
-    /** Respond to the user pressing key E by queuing the key on our
-     *  queue of pending keys.*/
+    /** 响应用户按下按键 E，将该按键加入待处理按键队列。 */
     public void keyPressed(String unused, KeyEvent e) {
         _pendingKeys.offer(e.getKeyText(e.getKeyCode()));
     }
 
-    /** Return the next pending event, waiting for it as necessary.
-     *  Ordinary key presses are reported as the key codes of the
-     *  character pressed.  In addition, menu-button clicks result in
-     *  the messages "Quit" or "New Game". */
+    /** 返回下一个待处理事件，必要时等待。普通按键以被按字符的键码报告；
+     * 此外，点击菜单按钮会产生消息“Quit”或“New Game”。 */
     String readKey() {
         try {
             return _pendingKeys.take();
@@ -72,28 +69,26 @@ class GUI extends TopLevel implements Observer {
         }
     }
 
-    /** Set the current score being displayed to SCORE and the current
-     *  maximum score to MAXSCORE. */
+    /** 将显示的当前分数设为 SCORE，将当前最高分设为 MAXSCORE。 */
     public void setScore(int score, int maxScore) {
         setLabel("Score", String.format("Score: %6d / Max score: %6d",
                                         score, maxScore));
     }
 
-    /** The model notifies me that is has changed when its notifyObservers
-     *  method is called, because my constructor registered me as an
-     *  Observer of the model. */
+    /** 当模型调用 notifyObservers 方法时，它会通知本对象模型已经改变，
+     * 因为构造器已将本对象注册为模型的 Observer。 */
     @Override
     public void update(Observable model, Object arg) {
         _widget.update(_model);
         setScore(_model.score(), _model.maxScore());
     }
 
-    /** The board widget. */
+    /** 棋盘组件。 */
     private BoardWidget _widget;
-    /** The game model being viewed. */
+    /** 当前显示的游戏模型。 */
     private Model _model;
 
-    /** Queue of pending key presses. */
+    /** 待处理的按键队列。 */
     private ArrayBlockingQueue<String> _pendingKeys =
         new ArrayBlockingQueue<>(5);
 

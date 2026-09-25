@@ -4,16 +4,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/** Tests the maxTileExists() static method of Model.
+/** 测试 Model 的静态方法 maxTileExists()。
  *
  * @author Omar Khan
  */
 public class TestMaxTileExists {
-    /** The board we'll be testing. */
+    /** 用于测试的棋盘。 */
     static Board b;
 
     @Test
-    /** Note that this isn't a possible board state. */
+    /** 注意，这并不是一种可能出现的棋盘状态。 */
     public void testEmptyBoard() {
         int[][] rawVals = new int[][] {
                 {0, 0, 0, 0},
@@ -28,7 +28,7 @@ public class TestMaxTileExists {
     }
 
     @Test
-    /** Tests a full board with no max piece. */
+    /** 测试没有最大数值方块的满棋盘。 */
     public void testFullBoardNoMax() {
         int[][] rawVals = new int[][] {
                 {2, 2, 2, 2},
@@ -43,7 +43,7 @@ public class TestMaxTileExists {
     }
 
     @Test
-    /** Tests a full board with the max piece. */
+    /** 测试含有最大数值方块的满棋盘。 */
     public void testFullBoardMax() {
         int[][] rawVals = new int[][] {
                 {2, 2, 2, 2},
@@ -59,7 +59,7 @@ public class TestMaxTileExists {
     }
 
     @Test
-    /** Tests multiple max pieces. */
+    /** 测试存在多个最大数值方块的情况。 */
     public void testMultipleMax() {
         int[][] rawVals = new int[][] {
                 {2, 2, 2, 2},
@@ -75,7 +75,7 @@ public class TestMaxTileExists {
     }
 
     @Test
-    /** Tests when the max piece is in the top right corner. */
+    /** 测试最大数值方块位于右上角的情况。 */
     public void testTopRightCorner() {
         int[][] rawVals = new int[][] {
                 {0, 0, 0, 2048},
@@ -91,7 +91,7 @@ public class TestMaxTileExists {
     }
 
     @Test
-    /** Tests when the max piece is in the top left corner. */
+    /** 测试最大数值方块位于左上角的情况。 */
     public void testTopLeftCorner() {
         int[][] rawVals = new int[][] {
                 {2048, 0, 0, 0},
@@ -107,7 +107,7 @@ public class TestMaxTileExists {
     }
 
     @Test
-    /** Tests when the max piece is in the bottom left corner. */
+    /** 测试最大数值方块位于左下角的情况。 */
     public void testBottomLeftCorner() {
         int[][] rawVals = new int[][] {
                 {0, 0, 0, 0},
@@ -123,7 +123,7 @@ public class TestMaxTileExists {
     }
 
     @Test
-    /** Tests when the max piece is in the bottom right corner. */
+    /** 测试最大数值方块位于右下角的情况。 */
     public void testBottomRightCorner() {
         int[][] rawVals = new int[][] {
                 {0, 0, 0, 0},

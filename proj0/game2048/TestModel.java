@@ -3,10 +3,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/** Tests of the Model class.
+/** Model 类的测试。
  *
- * These tests will cover all of the things you've written together. You
- * shouldn't try to pass these tests until every other Test file passes.
+ * 这些测试会综合检验你编写的所有内容。在其他 Test 文件全部通过之前，
+ * 不应尝试通过这些测试。
  *
  * @author Omar Khan
  */
@@ -14,15 +14,14 @@ public class TestModel extends TestUtils {
 
     /**
      * ******************
-     * *  TESTING TILT  *
+     * *    测试倾斜    *
      * ******************
      * <p>
-     * The following tests determine the correctness of your `tilt`
-     * method.
+     * 以下测试用于判断 `tilt` 方法是否正确。
      */
 
     @Test
-    /** Checks right two pieces merge when 3 adjacent pieces have same value. */
+    /** 检查三个相邻方块数值相同时，右侧两个方块是否合并。 */
     public void testTripleMerge1() {
         int[][] before = new int[][]{
                 {2, 0, 0, 0},
@@ -45,7 +44,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Checks right two pieces merge when 3 adjacent pieces have same value. */
+    /** 检查三个相邻方块数值相同时，右侧两个方块是否合并。 */
     public void testTripleMerge2() {
         int[][] before = new int[][]{
                 {2, 0, 0, 0},
@@ -68,7 +67,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Checks two adjacent merges work. */
+    /** 检查两组相邻方块是否都能正确合并。 */
     public void testQuadrupleMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 2},
@@ -91,7 +90,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Checks that a tile only merges once per tilt. */
+    /** 检查一个方块在每次倾斜中是否只合并一次。 */
     public void testSingleMergeUp() {
         int[][] before = new int[][]{
                 {2, 0, 0, 0},
@@ -113,7 +112,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Checks that a tile only merges once per tilt. */
+    /** 检查一个方块在每次倾斜中是否只合并一次。 */
     public void testSingleMergeSouth() {
         int[][] before = new int[][]{
                 {4, 0, 0, 0},
@@ -135,7 +134,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Checks that a tile only merges once per tilt. */
+    /** 检查一个方块在每次倾斜中是否只合并一次。 */
     public void testSingleMergeEast() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -157,7 +156,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Checks that a tile only merges once per tilt. */
+    /** 检查一个方块在每次倾斜中是否只合并一次。 */
     public void testSingleMergeWest() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -179,7 +178,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Checks that a tilt that causes no change returns false. */
+    /** 检查未产生任何变化的倾斜是否返回 false。 */
     public void testNoMove() {
         int[][] before = new int[][]{
                 {2, 0, 2, 2},
@@ -197,7 +196,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move tiles up (no merging). */
+    /** 向上移动方块（不合并）。 */
     public void testUpNoMerge() {
         int[][] before = new int[][]{
                 {0, 0, 4, 0},
@@ -220,7 +219,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move adjacent tiles up (no merging). */
+    /** 向上移动相邻方块（不合并）。 */
     public void testUpAdjacentNoMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -243,7 +242,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move non-adjacent tiles up (no merging). */
+    /** 向上移动不相邻的方块（不合并）。 */
     public void testUpNonAdjacentNoMerge1() {
         int[][] before = new int[][]{
                 {0, 0, 4, 0},
@@ -266,7 +265,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move non-adjacent tiles up (no merging); case 2: both tiles move. */
+    /** 向上移动不相邻的方块（不合并）；情况 2：两个方块都移动。 */
     public void testMoveUpNonAdjacentNoMerge2() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -289,7 +288,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge adjacent tiles up. */
+    /** 向上合并相邻方块。 */
     public void testUpAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 0, 2, 0},
@@ -312,7 +311,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge non-adjacent tiles up. */
+    /** 向上合并不相邻的方块。 */
     public void testUpNonAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 0, 2, 0},
@@ -335,7 +334,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move and merge adjacent tiles up. */
+    /** 向上移动并合并相邻方块。 */
     public void testUpAdjacentMergeMove() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -358,7 +357,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move tiles right (no merging). */
+    /** 向右移动方块（不合并）。 */
     public void testRightNoMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -381,7 +380,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move adjacent tiles right (no merging). */
+    /** 向右移动相邻方块（不合并）。 */
     public void testRightAdjacentNoMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -404,7 +403,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move adjacent tiles right (no merging). */
+    /** 向右移动相邻方块（不合并）。 */
     public void testRightNonAdjacentNoMerge1() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -427,7 +426,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move adjacent tiles right (no merging); case 2: both tiles move. */
+    /** 向右移动相邻方块（不合并）；情况 2：两个方块都移动。 */
     public void testRightNonAdjacentNoMerge2() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -450,7 +449,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge adjacent tiles right. */
+    /** 向右合并相邻方块。 */
     public void testRightAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -473,7 +472,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge non-adjacent tiles right. */
+    /** 向右合并不相邻的方块。 */
     public void testRightNonAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -496,7 +495,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move and merge adjacent tiles right. */
+    /** 向右移动并合并相邻方块。 */
     public void testRightAdjacentMergeMove() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -519,7 +518,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move and merge non-adjacent tiles right. */
+    /** 向右移动并合并不相邻的方块。 */
     public void testRightNonAdjacentMergeMove() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -542,7 +541,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move tiles down (no merging). */
+    /** 向下移动方块（不合并）。 */
     public void testDownNoMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -565,7 +564,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move adjacent tiles down (no merging). */
+    /** 向下移动相邻方块（不合并）。 */
     public void testDownAdjacentNoMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -588,7 +587,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move non-adjacent tiles down (no merging). */
+    /** 向下移动不相邻的方块（不合并）。 */
     public void testDownNonAdjacentNoMerge1() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -611,7 +610,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge adjacent tiles down. */
+    /** 向下合并相邻方块。 */
     public void testDownAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -634,7 +633,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge non-adjacent tiles down. */
+    /** 向下合并不相邻的方块。 */
     public void testDownNonAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 2, 0, 0},
@@ -657,7 +656,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move and merge adjacent tiles down. */
+    /** 向下移动并合并相邻方块。 */
     public void testDownAdjacentMergeMove() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -680,7 +679,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move and merge non-adjacent tiles down. */
+    /** 向下移动并合并不相邻的方块。 */
     public void testDownNonAdjacentMergeMove() {
         int[][] before = new int[][]{
                 {0, 2, 0, 0},
@@ -703,7 +702,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move tiles left (no merging). */
+    /** 向左移动方块（不合并）。 */
     public void testLeftNoMerge() {
         int[][] before = new int[][]{
                 {4, 0, 0, 0},
@@ -726,7 +725,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move adjacent tiles left (no merging). */
+    /** 向左移动相邻方块（不合并）。 */
     public void testLeftAdjacentNoMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -749,7 +748,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move non-adjacent tiles left (no merging). */
+    /** 向左移动不相邻的方块（不合并）。 */
     public void testLeftNonAdjacentNoMerge1() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -772,7 +771,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge adjacent tiles left. */
+    /** 向左合并相邻方块。 */
     public void testLeftAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -795,7 +794,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Merge non-adjacent tiles left. */
+    /** 向左合并不相邻的方块。 */
     public void testLeftNonAdjacentMerge() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -818,7 +817,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move and merge adjacent tiles left. */
+    /** 向左移动并合并相邻方块。 */
     public void testLeftAdjacentMergeMove() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -841,7 +840,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Move and merge non-adjacent tiles left. */
+    /** 向左移动并合并不相邻的方块。 */
     public void testLeftNonAdjacentMergeMove() {
         int[][] before = new int[][]{
                 {0, 0, 0, 0},
@@ -865,15 +864,14 @@ public class TestModel extends TestUtils {
 
     /**
      * ***********************
-     * *  TESTING GAME OVER  *
+     * *    测试游戏结束     *
      * ***********************
      * <p>
-     * The following tests determine the correctness of your `checkGameOver`
-     * method.
+     * 以下测试用于判断 `checkGameOver` 方法是否正确。
      */
 
     @Test
-    /** No tilt can cause a change. */
+    /** 向任何方向倾斜都不会产生变化。 */
     public void testGameOverNoChange1() {
         int[][] board = {
                 {2, 4, 2, 4},
@@ -888,7 +886,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** The MAX_PIECE (2048) tile is on the board. */
+    /** 棋盘上存在 MAX_PIECE（2048）方块。 */
     public void testGameOverMaxPiece() {
         int[][] board = {
                 {0, 0, 0, 0},
@@ -903,7 +901,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** No tilt can cause a change. */
+    /** 向任何方向倾斜都不会产生变化。 */
     public void testGameOverNoChange2() {
         int[][] board = {
                 {128, 4, 2, 4},
@@ -918,7 +916,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Any tilt will change the board. */
+    /** 向任何方向倾斜都会改变棋盘。 */
     public void testGameNotOver1() {
         int[][] board = {
                 {2, 4, 2, 2},
@@ -932,7 +930,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** A tilt right or down will change the board. */
+    /** 向右或向下倾斜会改变棋盘。 */
     public void testGameNotOver2() {
         int[][] board = {
                 {2, 4, 2, 4},
@@ -947,16 +945,15 @@ public class TestModel extends TestUtils {
 
     /**
      * *************************
-     * *  MULTIPLE MOVE TESTS  *
+     * *     多次移动测试      *
      * *************************
      * <p>
-     * The following tests will call the `tilt` method multiple times and check
-     * the correctness of the board after each move. You shouldn't expect these
-     * tests to pass until all of the above tests pass.
+     * 以下测试会多次调用 `tilt` 方法，并检查每次移动后棋盘是否正确。
+     * 在上述所有测试通过之前，不应期望这些测试能够通过。
      */
 
     @Test
-    /** Will test multiple moves on the Model. */
+    /** 测试 Model 上的多次移动。 */
     public void testMultipleMoves1() {
         int[][] board = new int[][]{
                 {0, 0, 0, 0},
@@ -1036,7 +1033,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Will test multiple moves on the Model that end the game. */
+    /** 测试 Model 上最终导致游戏结束的多次移动。 */
     public void testMultipleMoves2() {
         int[][] board = new int[][]{
                 {0, 0, 0, 0},
@@ -1094,7 +1091,7 @@ public class TestModel extends TestUtils {
     }
 
     @Test
-    /** Will test multiple moves on the Model. */
+    /** 测试 Model 上的多次移动。 */
     public void testMultipleMoves3() {
         int[][] board = new int[][]{
                 {0, 2, 2, 0},

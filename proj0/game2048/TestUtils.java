@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 public class TestUtils {
 
-    /** The Model we'll be testing. */
+    /** 要测试的 Model。 */
     static Model model;
-    /** The size of the Board on these tests. */
+    /** 这些测试所用 Board 的大小。 */
     public static final int SIZE = 4;
 
-    /** Utility method to generate an error message. */
+    /** 用于生成错误消息的工具方法。 */
     public static String boardShouldChange(Side side) {
         return "When tilted to the " + side + ", the model should change, but"
                 + " the call to tilt returned false.\nModel after call:" + model;
     }
 
-    /** Utility method to generate an error message. */
+    /** 用于生成错误消息的工具方法。 */
     public static String boardShouldNotChange(Side side) {
         return "When tilted to the " + side + ", the model should NOT change,"
                 + " but the call to tilt returned true.\nModel after call:"
@@ -23,8 +23,7 @@ public class TestUtils {
     }
 
     /**
-     * Updates the static variable model to be the Model with board attribute
-     * as described by VALUES.
+     * 更新静态变量 model，使其成为棋盘属性由 VALUES 描述的 Model。
      */
     public static void updateModel(int[][] values, int score, int maxScore,
                                    boolean gameOver) {
@@ -34,14 +33,12 @@ public class TestUtils {
     }
 
     /**
-     * Checks that the static variable model is configured as described by
-     * VALUES with score attribute SCORE.
-     *  @param values - a 2D array of integers describing the expected board a
-     *               "0" element represents a null Tile.
-     * @param score - what score the model should have.
-     * @param maxScore
-     * @param prevBoard - what the board looked like before this move.
-     * @param currMove - the Side that we tilted towards.
+     * 检查静态变量 model 是否按 VALUES 所描述的方式配置，且其分数属性为 SCORE。
+     * @param values 描述预期棋盘的二维整数数组，其中元素“0”表示 null Tile。
+     * @param score 模型应具有的分数。
+     * @param maxScore 模型应具有的最高分。
+     * @param prevBoard 此次移动前棋盘的状态。
+     * @param currMove 棋盘倾斜所朝的 Side。
      */
     public static void checkModel(int[][] values, int score, int maxScore,
                                   String prevBoard, Side currMove) {
@@ -55,11 +52,11 @@ public class TestUtils {
     }
 
     /**
-     * Checks that the returned boolean of a call to the tilt method is correct.
+     * 检查调用 tilt 方法返回的布尔值是否正确。
      *
-     * @param s - the side that was tilted (the parameter to tilt).
-     * @param expected - what the expected return value is.
-     * @param actual - what the actual return value is.
+     * @param s 倾斜的方向（传给 tilt 的参数）。
+     * @param expected 预期的返回值。
+     * @param actual 实际的返回值。
      */
     public static void checkChanged(Side s, boolean expected, boolean actual) {
         String changedErrMsg;

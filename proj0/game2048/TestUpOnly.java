@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/** Tests the tilt() method in the up (Side.NORTH) direction only.
+/** 仅测试 tilt() 方法向上（Side.NORTH）倾斜的情况。
  *
  * @author Omar Khan
  */
@@ -12,7 +12,7 @@ public class TestUpOnly extends TestUtils {
 
 
     @Test
-    /** Move tiles up (no merging). */
+    /** 向上移动方块（不合并）。 */
     public void testUpNoMerge() {
         int[][] before = new int[][] {
                 {0, 0, 4, 0},
@@ -35,7 +35,7 @@ public class TestUpOnly extends TestUtils {
     }
 
     @Test
-    /** A basic merge. */
+    /** 基本合并。 */
     public void testUpBasicMerge() {
         int[][] before = new int[][] {
                 {0, 0, 0, 0},
@@ -58,7 +58,7 @@ public class TestUpOnly extends TestUtils {
     }
 
     @Test
-    /** A triple merge. Only the leading 2 tiles should merge. */
+    /** 三个相同方块的合并；只有前面的两个方块应当合并。 */
     public void testUpTripleMerge() {
         int[][] before = new int[][] {
                 {0, 0, 2, 0},
@@ -81,12 +81,11 @@ public class TestUpOnly extends TestUtils {
     }
 
     @Test
-    /** A tricky merge.
+    /** 一个容易出错的合并场景。
      *
-     * The tricky part here is that the 4 tile on the bottom row shouldn't
-     * merge with the newly created 4 tile on the top row. If you're failing
-     * this test, try seeing how you can ensure that the bottom 4 tile doesn't
-     * merge with the newly created 4 tile on top.*/
+     * 难点在于，最下行的 4 方块不应与最上行新生成的 4 方块合并。
+     * 如果此测试失败，请思考如何确保底部的 4 方块不与顶部新生成的
+     * 4 方块合并。*/
     public void testUpTrickyMerge() {
         int[][] before = new int[][] {
                 {0, 0, 2, 0},
